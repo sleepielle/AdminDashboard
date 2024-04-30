@@ -3,7 +3,8 @@ import "./footer.scss"
 const Footer =()=> {
     return (
         <div className="footer">
-            Footer
+            <span>meche.admin</span>
+            <span>Meche Admin Dashboard</span>
         </div>
     );
 }

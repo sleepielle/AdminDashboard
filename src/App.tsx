@@ -1,68 +1,58 @@
-import Home from "./pages/home/Home"
+import Home from "./pages/home/Home";
 import Users from "./pages/users/users";
 import Products from "./pages/products/products";
 import Navbar from "./components/navbar/Navbar";
 import Menu from "./components/menu/Menu";
 import Footer from "./components/footer/Footer";
 import Login from "./pages/login/Login";
-import "./styles/global.scss"
+import "./styles/global.scss";
 
-
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 function App() {
-
-
   const Layout = () => {
     return (
-      <div className="main"> 
-      <Navbar/>
-      <div className="container">
-        <div className="menuContainer">
-        <Menu/>
+      <div className="main">
+        <Navbar />
+        <div className="container">
+          <div className="menuContainer">
+            <Menu />
+          </div>
+          <div className="contentContainer">
+            <Outlet />
+          </div>
         </div>
-        <div className="contentContainer">
-          <Outlet/>
-        </div>
+        <Footer />
       </div>
-      <Footer/>
-      </div>
-    )
-  }
+    );
+  };
 
   const router = createBrowserRouter([
     {
       path: "/",
-     element: <Layout/>,
-     children: 
-     [
-      {
-        path:"/",
-        element:<Home/>
-      },
-      {
-        path:"/users",
-        element:<Users/>
-      },
-      {
-        path:"/products",
-        element:<Products/>
-      },
-     ]
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/users",
+          element: <Users />,
+        },
+        {
+          path: "/products",
+          element: <Products />,
+        },
+      ],
     },
     {
-      path:"/login",
-      element:<Login/>
-    }
+      path: "/login",
+      element: <Login />,
+    },
   ]);
 
-  return  <RouterProvider router={router} />;
-  
- 
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
