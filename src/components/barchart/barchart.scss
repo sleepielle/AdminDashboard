@@ -1,0 +1,16 @@
+@import "../../styles/variables.scss";
+
+.barchartbox{
+    width:100%;
+    height:70%;
+
+
+    h1{
+        font-size:20px;
+        margin-bottom:20px;
+    }
+
+    .chart{
+        height:100%;
+    }
+}
