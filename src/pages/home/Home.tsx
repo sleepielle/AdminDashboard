@@ -3,6 +3,7 @@ import Topbox from "../../components/topbox/topbox";
 import Chartbox from "../../components/chartbox/chartbox";
 import Barchart from "../../components/barchart/barchart";
 import Piechart from "../../components/piechart/piechart";
+import Bigchartbox from "../../components/bigchartbox/bigchartbox";
 
 import { barChartBoxRevenue, chartBoxUser } from "../../data";
 import { chartBoxProduct } from "../../data";
@@ -32,7 +33,9 @@ const Home = () => {
         {" "}
         <Chartbox {...chartBoxConversion} />
       </div>
-      <div className="box box7"></div>
+      <div className="box box7">
+        <Bigchartbox />
+      </div>
       <div className="box box8">
         <Barchart {...barChartBoxVisit} />
       </div>
