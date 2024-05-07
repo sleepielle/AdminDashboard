@@ -20,7 +20,7 @@ const data = [
 const Piechart = () => {
   return (
     <div className="piechart">
-      <h1 className="title">Leads by Source</h1>
+      <h1>Leads by Source</h1>
       <div className="piechartbox">
         <ResponsiveContainer width="99%" height={300}>
           <PieChart>
@@ -46,7 +46,16 @@ const Piechart = () => {
 
       <div className="options">
         {data.map((item) => (
-          <div className="option" key={item.name}></div>
+          <div className="option" key={item.name}>
+            <div className="title">
+              <div
+                className="dot"
+                style={{ backgroundColor: item.color }}
+              ></div>
+              <span className="optiontitle">{item.name}</span>
+              <span className="optiontitle">{item.value}</span>
+            </div>
+          </div>
         ))}
       </div>
     </div>
