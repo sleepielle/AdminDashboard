@@ -1,0 +1,20 @@
+.dataTable{
+
+    .dataGrid{
+        background-color: white;
+        padding:20px;
+    
+        /*esto le da la vuelta al contenedor de search y export/density*/
+        .MuiDataGrid-toolbarContainer{
+            flex-direction: row-reverse;
+        }
+
+    }
+
+    img{
+        width:32px;
+        height:32px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
