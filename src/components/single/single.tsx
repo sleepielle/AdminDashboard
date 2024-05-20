@@ -17,10 +17,10 @@ type Props = {
   title: string;
   info: object;
   chart: {
-    dataKeys: { name: string; color: string };
+    dataKeys: { name: string; color: string }[];
     data: object[];
   };
-  activities?: { time: string; text: string };
+  activities?: { time: string; text: string }[];
 };
 
 const Single = (props: Props) => {
@@ -35,50 +35,63 @@ const Single = (props: Props) => {
             <button>Update</button>
           </div>
           <div className="details">
-            <div className="itemTitle"></div>
-            <div className="itemValue"></div>
+            {Object.entries(props.info).map((item) => (
+              <div className="item" key={item[0]}>
+                <span className="itemTitle">{item[0]}</span>
+                <span className="itemValue">{item[1]}</span>
+              </div>
+            ))}
           </div>
         </div>
         <hr />
-        <div className="chart">
-          <LineChart
-            width={500}
-            height={300}
-            data={props.chart.data}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip
-              contentStyle={{ backgroundColor: "rgba(0,0,0,.34" }}
-              labelStyle={{ fontWeight: "bold" }}
-            />
-            <Legend />
-            <Line
-              type="monotone"
-              dataKey="pv"
-              stroke="#8884d8"
-              activeDot={{ r: 8 }}
-            />
-            <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-          </LineChart>
-        </div>
+
+        {props.chart && (
+          <div className="chart">
+            <LineChart
+              width={500}
+              height={300}
+              data={props.chart.data}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+            >
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip
+                contentStyle={{ backgroundColor: "rgba(0,0,0,.34" }}
+                labelStyle={{ fontWeight: "bold" }}
+              />
+              <Legend />
+              {props.chart.dataKeys.map((dataKey) => (
+                <Line
+                  type="monotone"
+                  dataKey={dataKey.name}
+                  stroke={dataKey.color}
+                />
+              ))}
+            </LineChart>
+          </div>
+        )}
       </div>
+
       <div className="activities">
         <h2 className="title">Latest Activities</h2>
-        <ul>
-          <li>
-            <div>
-              <p>John Doe purchased</p>
-              <time>3 weeks ago</time>
-            </div>
-          </li>
-        </ul>
+
+        {props.activities && (
+          <ul>
+            {props.activities.map((activity) => (
+              <li>
+                <div>
+                  <p>{activity.text}</p>
+                  <time>{activity.time}</time>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

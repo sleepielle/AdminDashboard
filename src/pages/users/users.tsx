@@ -74,7 +74,7 @@ const Users = () => {
       </div>
       <DataTable slug="users" columns={columns} rows={userRows} />
 
-      {open && <AddModal slug="user" columns={columns} setOpen={setOpen} />}
+      {open && <AddModal slug="users" columns={columns} setOpen={setOpen} />}
     </div>
   );
 };
