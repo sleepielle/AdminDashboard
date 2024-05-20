@@ -1,3 +1,5 @@
+@import "../../styles/responsive.scss";
+
 .topbox{
     h1{
         margin-bottom:20px;
@@ -22,12 +24,29 @@
                     height:40px;
                     border-radius:50%;
                     object-fit: cover;
+
+                    @include xxl{
+                       display: none;
+                      }
+
+                      @include lg{
+                        display: block;
+                       }
                 }
 
                 .userTexts{
                     display: flex;
                     flex-direction: column;
                     gap:5px;
+
+                    @include xxl{
+                      text-align: start;
+                       }
+ 
+                       @include lg{
+                        text-align: start;
+                        }
+
 
                     .username{
                             font-size: 14px;
@@ -36,6 +55,14 @@
 
                     .email{
                         font-size: 12px;
+                      
+                           @include xxl{
+                             display: none;
+                            }
+
+                            @include lg{
+                                display: block;
+                               }
                     }
                 }
             }

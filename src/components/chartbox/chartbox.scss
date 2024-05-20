@@ -1,18 +1,41 @@
 @import "../../styles/variables.scss";
+@import "../../styles/responsive.scss";
+
 
 .chartbox{
  display: flex;
 height:100%;
+
+
+@include sm{
+  flex-direction: column;
+}
+
  .boxInfo{
     flex:3;
     display: flex;
     flex-direction:  column;
     justify-content: space-between;
 
+    @include sm{
+     gap: 20px;
+    }
+
+    
     .title{
         display: flex;
-        align-items: center;
+        justify-content: start;
+        text-align: start;
         gap:10px;
+
+        @include xxl{
+          font-size: 14px;
+        }
+     }
+     h1{
+      @include xxl{
+        font-size: 20px;
+      }
      }
     }
 
@@ -36,6 +59,10 @@ height:100%;
           .percentage{
             font-weight: bold;
             font-size:20px;
+
+            @include xxl{
+              font-size: 16px;
+            }
           }
 
           .month{
