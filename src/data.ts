@@ -507,7 +507,7 @@ export const products = [
   },
   {
     id: 6,
-    img: "https://www.smartworld.it/wp-content/uploads/2019/09/High_Resolution_PNG-MX-Master-3-LEFT-GRAPHITE.png",
+    img: "",
     title: "Logitech MX Master 3",
     color: "black",
     producer: "Logitech",

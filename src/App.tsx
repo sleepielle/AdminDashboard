@@ -5,6 +5,9 @@ import Navbar from "./components/navbar/Navbar";
 import Menu from "./components/menu/Menu";
 import Footer from "./components/footer/Footer";
 import Login from "./pages/login/Login";
+import SingleProduct from "./pages/singleProduct/singleProduct";
+import SingleUser from "./pages/singleUser/singleUser";
+
 import "./styles/global.scss";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
@@ -43,6 +46,14 @@ function App() {
         {
           path: "/products",
           element: <Products />,
+        },
+        {
+          path: "/users/:id",
+          element: <SingleUser />,
+        },
+        {
+          path: "/products/:id",
+          element: <SingleProduct />,
         },
       ],
     },
