@@ -18,6 +18,8 @@ a {
   box-sizing: border-box;
 }
 
+
+
 /* Remove default margin */
 body,
 h1,
@@ -85,12 +87,16 @@ select {
   }
 }
 
-
+body{
+  min-height:100%;
+}
 
 .main{
   font-family: "Inter", sans-serif;
   background-color: $main-bg;
   color: $main-color;
+  height:100%;
+  width:100%;
 }
 
 
@@ -107,4 +113,5 @@ select {
 .contentContainer{
   padding: 5px 20px;
   width:100%;
+
 }
