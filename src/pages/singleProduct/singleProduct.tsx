@@ -1,4 +1,3 @@
-import React from "react";
 import Single from "../../components/single/single";
 import { singleProduct } from "../../data";
 const SingleProduct = () => {

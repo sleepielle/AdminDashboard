@@ -1,4 +1,3 @@
-import React from "react";
 import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
 import "./datatable.scss";
 import { Link } from "react-router-dom";
