@@ -1,4 +1,4 @@
-import "./home.scss";
+import "./Home.scss";
 import Topbox from "../../components/topbox/topbox";
 import Chartbox from "../../components/chartbox/chartbox";
 import Barchart from "../../components/barchart/barchart";
