@@ -5,7 +5,7 @@ import { userRows } from "../../data";
 import AddModal from "../../components/AddModal/addmodal";
 import { useState } from "react";
 
-const columns: GridColDef<(typeof rows)[number]>[] = [
+const columns: GridColDef<(typeof userRows)[number]>[] = [
   { field: "id", headerName: "ID", width: 90 },
   {
     field: "img",
@@ -19,7 +19,7 @@ const columns: GridColDef<(typeof rows)[number]>[] = [
     field: "actions",
     headerName: "Actions",
     width: 100,
-    renderCell: (params) => {
+    renderCell: () => {
       return (
         <div className="action">
           <div className="view">View</div>
@@ -59,7 +59,7 @@ const columns: GridColDef<(typeof rows)[number]>[] = [
     description: "This column has a value getter and is not sortable.",
     sortable: false,
     width: 160,
-    valueGetter: (value, row) => `${row.firstName || ""} ${row.lastName || ""}`,
+    valueGetter: (_, row) => `${row.firstName || ""} ${row.lastName || ""}`,
   },
 ];
 

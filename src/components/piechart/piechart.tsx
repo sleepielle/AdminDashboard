@@ -1,13 +1,5 @@
 import "./piechart.scss";
-import React, { PureComponent } from "react";
-import {
-  PieChart,
-  Pie,
-  Sector,
-  Cell,
-  ResponsiveContainer,
-  Tooltip,
-} from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import "../piechart/piechart.scss";
 
 const data = [

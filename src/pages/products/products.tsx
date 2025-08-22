@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./products.scss";
 import AddModal from "../../components/AddModal/addmodal";
 import DataTable from "../../components/dataTable/datatable";
-import { userRows } from "../../data";
 import { GridColDef } from "@mui/x-data-grid";
 import { products } from "../../data";
 

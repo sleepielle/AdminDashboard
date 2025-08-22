@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ResponsiveContainer } from "recharts";
 import { LineChart } from "recharts";
 import { Line } from "recharts";
-import { XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import { Tooltip } from "recharts";
 
 type Props = {
   color: string;
